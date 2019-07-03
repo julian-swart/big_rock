@@ -8,7 +8,7 @@ Details:
 
 - Boats can only fish from 9AM - 3PM, except Saturday this changes to 8AM - 2PM
 
-- The boats have to be within a certain boundary off of the North Carolina Coast and the Gulf Stream. (The winners have to pass a polyraph test)
+- The boats have to be within a certain boundary off of the North Carolina Coast. They typically fish in and around the Gulf Stream in hundreds to over a thousand feet of water. (The winners have to pass a polyraph test)
 
 - Entry Fee is $25,000 to be entered into all categories (some boats don't enter into all categories)
 
