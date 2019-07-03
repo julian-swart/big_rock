@@ -6,6 +6,10 @@ Details:
 
 - Boats can choose 4 of the 6 days to fish
 
+- Boats can only fish from 9AM - 3PM, except on Saturday it is from 8AM - 2PM
+
+- The boats have to be within a certain boundary off of the North Carolina Coast and the Gulf Stream. (The winners have to complete a polyraph test)
+
 - Entry Fee is $25,000 to be entered into all categories (some boats don't enter into all categories)
 
 - 184 sportfishing boats entered this year
