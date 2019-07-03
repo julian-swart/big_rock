@@ -6,7 +6,7 @@ Details:
 
 - 184 sportfishing boats entered this year
 
--T he prize money purse is a record high at $2.86 million!
+- The prize money purse is a record high at $2.86 million!
 
 - All categories includes Fabulous Fisherman (first blue marlin to be weighed over 500 lbs), biggest blue marlin, biggest dolphin, biggest wahoo, biggest tuna, and the billfish release daily and aggregate tournament
 
