@@ -1,6 +1,6 @@
-### This is an exploratory data analysis on the Big Rock Blue Marlin Fishing Tournament that occurs in Morehead City, North Carolina each year in the beginning of June.
+## This is an exploratory data analysis on the Big Rock Blue Marlin Fishing Tournament that occurs in Morehead City, North Carolina each year in the beginning of June.
 
-Details of the tournament:
+### Details of the tournament:
 
 - This is a competitive sportfishing tournament with the ultimate goal of catching the heaviest blue marlin.
 
