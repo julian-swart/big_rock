@@ -1,6 +1,7 @@
 ### This is an exploratory data analysis on the Big Rock Blue Marlin Fishing Tournament that occurs in Morehead City, North Carolina each year in the beginning of June.
 
 Details:
+
 -Entry Fee is $25,000 to be entered into all categories
 -184 sportfishing boats entered this year
 -The prize money purse is a record high at $2.86 million!
