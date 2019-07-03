@@ -6,7 +6,7 @@ Details:
 
 - Boats can choose 4 of the 6 days to fish
 
-- Entry Fee is $25,000 to be entered into all categories (some boats to enter into all categories)
+- Entry Fee is $25,000 to be entered into all categories (some boats don't enter into all categories)
 
 - 184 sportfishing boats entered this year
 
