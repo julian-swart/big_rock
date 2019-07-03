@@ -32,7 +32,7 @@ Details of the tournament:
 
 ### Lingo explained:
 
-  - The term billfish refers to the characteristic of a long spear-like nose/upper-jaw (a bill) that these fish have. Even though they are not a threatened species by any means, they are relatively rare to catch, hard to catch, fight very hard, and jump a lot when caught. The challenge of catching them, the show they put on when caught, and the size and beauty of them are just a few reasons why people enjoy the sport of billfish. 
+  - The term billfish refers to the characteristic of a long spear-like nose/upper-jaw (a bill) that these fish have. Even though they are not a threatened species by any means, they are relatively rare to catch, hard to catch, fight very hard, and jump a lot when caught. The challenge of catching them, the show they put on when caught, and the size and beauty of them are just a few reasons for the allure to the sport of billfish. 
 
   - The term meat fish refers to the fish having edible and delicious meat. These fish have no bills and are typically easier to catch, smaller, and are more abundant. However, they are still big fish (typically 10-100 pounds). Billfish are generally not thought of as good to eat. 
 
