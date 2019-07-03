@@ -22,7 +22,7 @@ Details:
 - The relationship of where the boat is from and amount of billfish caught
 - Do the above relationships differ if the fish was released or killed? 
 - Do the above relationships differ by the species of billfish? (blue marlin, white marlin, sailfish, spearfish)
-- Time of day when billfish get caught
+- Distribution of time of day when billfish are caught
 - Average time of fighting a fish 
 - The businesses/job titles of the owners 
 
