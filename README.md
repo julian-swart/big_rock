@@ -10,7 +10,7 @@ Details:
 
 - All categories includes Fabulous Fisherman (first blue marlin to be weighed over 500 lbs), biggest blue marlin, biggest dolphin, biggest wahoo, biggest tuna, and the billfish release daily and aggregate tournament
 
-- The tournament ran for 6 days, Jun 10th, 2019 (Monday) - June 15th, 2019 (Saturday)
+- The tournament ran for 6 days: Jun 10th, 2019 (Monday) - June 15th, 2019 (Saturday)
 
 - Boats can choose 4 of the 6 days to fish
 
