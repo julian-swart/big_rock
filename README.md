@@ -26,7 +26,7 @@
 
 - Boats have to radio-in and report any activity, such as hooking-up to a fish, losing a fish, releasing a fish, or boating a fish. 
 
-- A blue marlin must weigh at least 400 pounds in order to qualify. If the fish is brought to land and does not weigh at least 400 pounds, that boat is penalized $10,000. 
+- A blue marlin must weigh at least 400 pounds in order to qualify. If the fish is brought to land and does not weigh at least 400 pounds, that boat is penalized 400 points in the release division and 400 lbs on the next fish they land (if they land another one). This makes it very difficult to win any prize money. 
 
 - There are many other rules that we won't go into detail about here (including acceptable baits and supplies, condition of the fish when weighing, etc). 
 
@@ -48,7 +48,7 @@
   
   - The term *wrong species* means the hooked-up fish that was caught or lost was not a qualifying species.
   
-  - The term *boating* or *boated* means the crew of a boat was able to catch and bring aboard a blue marlin that they intend to weigh on land. The fish will only be boated if the crew believes it meets the 400 lb qualification (they make this decision by measuring its length and girth to calculate its approximate weight).
+  - The term *boating*, *boated*, *land*, or *landed* means the crew of a boat was able to catch and bring aboard a blue marlin that they intend to weigh on land. The fish will only be boated if the crew believes it meets the 400 lb qualification (they make this decision by measuring its length and girth to calculate its approximate weight).
 
 ### Notes:
 
