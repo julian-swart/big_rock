@@ -6,7 +6,7 @@
 
 - Participants can also compete in other categories, such as releasing the most billfish (blue marlin, white marlin, sailfish, and spearfish) or weighing in the heaviest meat fish (wahoo, tuna, mahi mahi). Terminology is further explained in the section below.
 
-- The tournament is mainly focused on blue marlin, which can grow to weigh well over 1,000 pounds. The other species of billfish are much smaller and have to be released. 
+- The tournament is mainly focused on blue marlin, which can grow to weigh well over 1,000 pounds and measure up to 16 feet. The other species of billfish are much smaller and have to be released. 
 
 - The entry fee this year was $25,000 to be entered into all categories (some boats don't enter into all categories).
 
