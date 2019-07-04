@@ -11,11 +11,11 @@
 - The entry fee this year was $25,000 to be entered into all categories (some boats don't enter into all categories).
 
 - All categories include: 
-  - Fabulous Fisherman: first blue marlin to be weighed over 500 lbs (winner receives over $500,000)
+  - Fabulous Fisherman: first blue marlin to be weighed over 500 lbs (this year's winner received $531,250)
   - Heaviest blue marlin (this year's winner caught a tournament record-breaking 914 lb fish and received $793,187)
-  - Heaviest dolphin, wahoo and tuna
-  - Daily/aggregate billfish release: points are earned based on species
-
+  - Daily/aggregate billfish release: points are earned based on species (this year's aggregate winner received $142,375) 
+  - Heaviest mahi mahi, wahoo and tuna (this year's winner for largest mahi mahi - also called a dolphin, not to be confused with Flipper - won $361,250)
+  
 - This year's tournament ran for 6 days: June 10th, 2019 (Monday) - June 15th, 2019 (Saturday).  Boats choose 4 of the 6 days to fish.
 
 - On Monday through Friday, boats are limited to fishing between 9AM and 3PM. On Saturday, boats are limited to fishing between 8AM and 2PM.
@@ -36,11 +36,11 @@
 
 ### Terminology explained:
 
-  - The term *billfish* refers to the characteristic of a long spear-like nose/upper-jaw (a bill) that these fish have. Even though they are not a threatened species by any means, they are relatively rare and difficult to catch, they fight very hard, and they jump a lot when caught. These challenging and exciting characteristics, along with the size and beauty of these fish are just a few reasons for the allure. Not to mention the enjoyment of being on the open ocean with the comforts of a deluxe sportfishing yacht. 
+  - The term *billfish* refers to the characteristic of a long spear-like nose/upper-jaw (a bill) that these fish have. They are difficult to catch, fight very hard, and jump a lot when caught. These challenging and exciting characteristics, along with the size and beauty of these fish, are just a few reasons for the allure. Not to mention the enjoyment of being on the open ocean with the comforts of a deluxe sportfishing yacht. 
 
-  - The term *meat fish* refers to the fish having edible and delicious meat. These fish have no bills and are typically smaller, more abundant, and easier to catch. However, they are still big fish (normally 10-100 pounds). Billfish are generally not thought of as good to eat. 
+  - The term *meat fish* refers to the fish having edible and delicious meat. These fish have no bills and are typically smaller, more abundant, and easier to catch. However, they are still big fish (normally 10-100 pounds). Billfish are generally not thought of as good to eat (some people do smoke them).
 
-  - The term *releasing* or *released* means the fish was let go instead of brought to land because it was too small, or because it wasn't a blue marlin. Points are earned for releasing billfish (based on species).  This years Billfish Release winner received $142,375. 
+  - The term *releasing* or *released* means the fish was let go instead of brought to land because it was too small, or because it wasn't a blue marlin.
   
   - The term *hooked-up* means a boat is actively fighting a fish that just ate one of the baits in the water.
   
@@ -72,5 +72,5 @@
 
 - Average time fighting a fish 
 
-- The businesses/job titles of the owners 
+- The businesses/job titles of the owners of the boats
 
