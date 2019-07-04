@@ -34,7 +34,7 @@
 
   - The term billfish refers to the characteristic of a long spear-like nose/upper-jaw (a bill) that these fish have. Even though they are not a threatened species by any means, they are relatively rare to catch, hard to catch, fight very hard, and jump a lot when caught. These challenging and exciting characteristics, along with the size and beauty of these fish are just a few reasons for the allure. Not to mention the enjoyment of being on the open ocean with the comforts of a deluxe sportfishing yacht. 
 
-  - The term meat fish refers to the fish having edible and delicious meat. These fish have no bills and are typically easier to catch, smaller, and are more abundant. However, they are still big fish (typically 10-100 pounds). Billfish are generally not thought of as good to eat. 
+  - The term meat fish refers to the fish having edible and delicious meat. These fish have no bills and are typically easier to catch, smaller, and are more abundant. However, they are still big fish (normally 10-100 pounds). Billfish are generally not thought of as good to eat. 
 
   - The term releasing or released means the fish was let go instead of killed because it was too small, or because it wasn't a blue marlin. You get points for releasing billfish and this years winner won $142,375 by doing that. 
   
