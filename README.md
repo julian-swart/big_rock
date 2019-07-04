@@ -2,7 +2,7 @@
 
 ### Tournament context:
 
-- The Big Rock is one of the largest competitive sportfishing tournaments in the world. It takes place annually in the beginning of June in a small coastal town called Morehead City, North Carolina, which is about an hour from where I grew up. The ultimate goal of this tournament is to catch the heaviest Atlantic blue marlin, resulting in a large monetary prize of nearly 1 million dollars. 
+- The Big Rock is one of the largest competitive sportfishing tournaments in the world. It is held annually in the beginning of June and is based out of a small coastal town named Morehead City, North Carolina, which is about an hour from where I grew up. The ultimate goal of this tournament is to catch the heaviest Atlantic blue marlin, resulting in a large monetary prize of nearly 1 million dollars. 
 
 - Participants can also compete in other categories, such as releasing the most billfish (blue marlin, white marlin, sailfish, and spearfish) or weighing in the heaviest meat fish (wahoo, tuna, mahi mahi). Terminology is further explained in the section below.
 
