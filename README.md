@@ -2,7 +2,7 @@
 
 ### Details of the tournament:
 
-- The Big Rock is one of the world's largest competitive sportfishing tournaments.  The ultimate goal of this tournament is to catch the heaviest blue marlin.
+- The Big Rock is one of the world's largest competitive sportfishing tournaments.  The ultimate goal of this tournament is to catch the heaviest blue marlin resulting in a large monetary prize of almost 1 million dollars. 
 
 - Participants also compete in other categories, such as releasing the most billfish (blue marlin, white marlin, sailfish, and spearfish) or weighing in the heaviest meat fish (wahoo, tuna, mahi mahi). I will explain all of the terminologoy in the next section. 
 
