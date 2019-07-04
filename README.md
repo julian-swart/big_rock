@@ -11,10 +11,10 @@
 - The entry fee this year was $25,000 to be entered into all categories (some boats don't enter into all categories).
 
 - All categories include: 
-  - Fabulous Fisherman: first blue marlin to be weighed over 500 lbs (this year's winner received $531,250)
-  - Heaviest blue marlin (this year's winner caught a tournament record-breaking 914 lb fish and received $793,187)
-  - Daily/aggregate billfish release: points are earned based on species (this year's aggregate winner received $142,375) 
-  - Heaviest mahi mahi, wahoo and tuna (this year's winner for largest mahi mahi - also called a dolphin, not to be confused with Flipper - won $361,250)
+  - Fabulous Fisherman: first blue marlin to be weighed over 500 lbs (this year's winner received $531,250).
+  - Heaviest blue marlin (this year's winner caught a tournament record-breaking 914 lb fish and received $793,187).
+  - Daily/aggregate billfish release: points are earned based on species (this year's aggregate winner received $142,375). 
+  - Heaviest mahi mahi, wahoo and tuna (this year's winner for largest mahi mahi - also called a dolphin, not to be confused with Flipper - won $361,250).
   
 - This year's tournament ran for 6 days: June 10th, 2019 (Monday) - June 15th, 2019 (Saturday).  Boats choose 4 of the 6 days to fish.
 
@@ -44,7 +44,7 @@
   
   - The term *hooked-up* means a boat is actively fighting a fish that just ate one of the baits in the water.
   
-  - The term *lost* means that the boat was fighting a fish, but the fish got off (it became un-hooked)
+  - The term *lost* means that the boat was fighting a fish, but the fish got off (it became un-hooked).
   
   - The term *wrong species* means the hooked-up fish that was caught or lost was not a qualifying species.
   
@@ -64,19 +64,19 @@
 
 - With the data I was able to collect through web scaping, I want to explore:
 
-  - The relationship of boat size and amount of billfish caught
+  - The relationship of boat size and amount of billfish caught.
 
-  - The relationship of boat brand and amount of billfish caught
+  - The relationship of boat brand and amount of billfish caught.
 
-  - The relationship of the boat's port city and amount of billfish caught
+  - The relationship of the boat's port city and amount of billfish caught.
 
   - Do the above relationships differ if the fish was released or boated? 
 
-  - Do the above relationships differ by the species of billfish? (blue marlin, white marlin, sailfish, spearfish)
+  - Do the above relationships differ by the species of billfish? 
 
-  - Distribution of time of day when billfish are caught
+  - Distribution of time of day when billfish are caught.
 
-  - Average time fighting a fish 
+  - Average time fighting a fish.
 
   - The businesses/job titles of the owners of the boats. I think it would be interesting to see how these people make a living. 
 
