@@ -78,5 +78,5 @@
 
   - Average time fighting a fish 
 
-  - The businesses/job titles of the owners of the boats. I think it would be interesting to see how these people make their money. 
+  - The businesses/job titles of the owners of the boats. I think it would be interesting to see how these people make a living. 
 
