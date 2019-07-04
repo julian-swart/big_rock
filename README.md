@@ -52,6 +52,8 @@
 
 - Unfortunately, these blue marlin have to be killed in order to be weighed on land. I don't have access to old data, but would guess an average of only 7 are weighed each year. These fish are plentiful in our oceans and their carcasses are donated to NC State University's Center for Marine Sciences and Technology for research. 
 
+- This tournament provides a major economic boost through increased tourism to an otherwise small, quiet beach town.
+
 ### What I want to explore in the data:
 
 - The relationship of boat size and amount of billfish caught
@@ -60,7 +62,7 @@
 
 - The relationship of the boat's port city and amount of billfish caught
 
-- Do the above relationships differ if the fish was released or killed? 
+- Do the above relationships differ if the fish was released or boated? 
 
 - Do the above relationships differ by the species of billfish? (blue marlin, white marlin, sailfish, spearfish)
 
