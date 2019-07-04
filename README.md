@@ -68,7 +68,7 @@
 
   - The relationship of boat brand and amount of billfish caught.
 
-  - The relationship of the boat's port city and amount of billfish caught.
+  - The relationship of the boat's port city/state and amount of billfish caught.
 
   - Do the above relationships differ if the fish was released or boated? 
 
