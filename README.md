@@ -22,7 +22,7 @@
 
 - The boats have to be within a certain boundary off of the North Carolina Coast. They typically fish 50 or more miles offshore around the Gulf Stream in hundreds to over a thousand feet of water.
 
-- 184 sportfishing boats ranging from 26 to 97 feet long entered the tournament. At least 4 different states were represented (57 boats did not enter their port city or state on the website).
+- 184 sportfishing boats ranging from 26 to 97 feet long entered the tournament. At least 4 different states, 90 cities, and 70 different boat manufacturers were represented (57 boats did not have their port city or state listed on the website).
 
 - Boats have to radio-in and report any activity, such as hooking-up to a fish, losing a fish, releasing a fish, or boating a fish. 
 
