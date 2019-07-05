@@ -78,7 +78,7 @@
 
   - Distribution of time of day when billfish are caught.
 
-  - Average time fighting a fish.
+  - Distribtion and summary statistics for time fighting a fish.
   
   - How many boats did not catch anything? What is different about them? 
 
