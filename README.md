@@ -16,7 +16,7 @@
   - Daily/aggregate billfish release: points are earned based on species (this year's aggregate winner received $142,375). 
   - Heaviest mahi mahi, wahoo and tuna (this year's winner for largest mahi mahi - also called a dolphin, not to be confused with Flipper - won $361,250).
   
-- The tournament runs for 6 days. This year's dates were June 10th, 2019 (Monday) - June 15th, 2019 (Saturday).  Boats choose 4 of the 6 days to fish.
+- The tournament runs for 6 days. This year's dates were June 10th, 2019 (Monday) - June 15th, 2019 (Saturday).  Boats choose 4 of the 6 days to fish, usually picking the calmer ocean days.
 
 - On Monday through Friday, boats are limited to fishing between 9AM and 3PM. On Saturday, boats are limited to fishing between 8AM and 2PM.
 
