@@ -26,9 +26,11 @@
 
 - Boats have to radio-in and report any activity, such as hooking-up to a fish, losing a fish, releasing a fish, or boating a fish. 
 
-- A blue marlin must weigh at least 400 pounds in order to qualify. If the fish is brought to land and does not weigh at least 400 pounds, that boat is penalized 400 points in the release division and 400 lbs on the next fish they land (if they land another one). This makes it very difficult to win any prize money. 
+- A blue marlin must weigh at least 400 pounds or be at least 110 inches long in order to qualify. If the fish is brought to land and does not meet either of these criteria, that boat is penalized 400 points in the release division and 400 lbs on the next fish they land (if they land another one). This makes it very difficult to win any prize money. 
 
-- There are many other rules that we won't go into detail about here (including acceptable baits and supplies, condition of the fish when weighing, etc). 
+- The blue marlin must also be intact when weighed. This means if a shark were to take a bite of the fish as it is getting reeled in or if the propeller of the boat happened to cut the fish (both have happened), it would be disqualifed.  
+
+- There are many other rules that we won't go into detail about here (including acceptable baits and supplies, every boat must leave from the same inlet, etc). 
 
 - The tournament is run on the honor system, and winners have to pass a polygraph test to ensure no rules were broken.
 
