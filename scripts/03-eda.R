@@ -27,7 +27,7 @@ df %>%
   group_by(hours) %>% 
   summarise(n = n()) %>% 
   ggplot(aes(x = hours, y = n)) +
-  geom_col(fill = 'seagreen3', color = 'grey50', alpha = .6) + 
+  geom_col(fill = 'seagreen3', alpha = .6) + 
   geom_text(aes(label = n), vjust = -1, fontface = 'bold') + 
   ggtitle("Frequency of hook-ups by hour") + 
   xlab("Hours") + 
@@ -41,10 +41,11 @@ df %>%
   group_by(hours_minutes) %>% 
   summarise(n = n()) %>% 
   ggplot(aes(x = hours_minutes, y = n)) +
-  geom_col(fill = 'seagreen3', alpha = .70) + 
+  geom_col(fill = 'seagreen3', alpha = .7) + 
   geom_text(aes(label = n), vjust = -1, fontface = 'bold') + 
+  scale_y_continuous(breaks = seq(0, 14, 2)) + 
   ggtitle("Frequency of hook-ups by 15 minute intervals") + 
-  xlab("15 minute intervals") + 
+  xlab("15 minute interval start times") + 
   ylab("Number of hook-ups")
 
 
