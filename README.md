@@ -1,6 +1,6 @@
-## Exploratory Data Analysis: The 61st Big Rock Blue Marlin Fishing Tournament - 2019
+### Exploratory Data Analysis: The 61st Big Rock Blue Marlin Fishing Tournament - 2019
 
-### Tournament context:
+#### Tournament context:
 
 - The Big Rock is one of the largest competitive sportfishing tournaments in the world. It is held annually in the beginning of June and is based out of a small coastal town named Morehead City, North Carolina, which is about an hour from where I grew up. The ultimate goal of this tournament is to catch the heaviest Atlantic blue marlin, resulting in a large monetary prize of nearly 1 million dollars. 
 
@@ -36,7 +36,7 @@
 
 - The prize money purse this year was a record high at $2.86 million! (The economy is doing well in 2019 apparently)
 
-### Terminology explained:
+#### Terminology explained:
 
   - The term *billfish* refers to the characteristic of a long spear-like nose/upper-jaw (a bill) that these fish have. They are fast, powerful, difficult to catch, fight extremely hard, and jump a lot when caught. These challenging and exciting characteristics, along with the size and beauty of these fish, are just a few reasons for the allure. Not to mention the enjoyment of being on the open ocean with the comforts of a deluxe sportfishing yacht. 
 
@@ -52,13 +52,13 @@
   
   - The term *boating*, *boated*, *land*, or *landed* means the crew of a boat was able to catch and bring aboard a blue marlin that they intend to weigh on land. The fish will only be boated if the crew believes it meets the 400 lb qualification (they make this decision by measuring its length and girth to calculate its approximate weight).
 
-### Notes:
+#### Notes:
 
 - Unfortunately, qualifying blue marlin are killed in order to be weighed on land. I don't have access to old data, but would guess an average of 7 are weighed each year. All carcasses are donated to NC State University's Center for Marine Sciences and Technology for research. 
 
 - This tournament provides a major economic boost through increased tourism to an otherwise small, quiet beach town.
 
-### Data exploration interests:
+#### Data exploration interests:
 
 - As you can imagine, there are varying beliefs of what works best to attract and catch billfish, especially blue marlin. Different contributing factors include, but are not limited to: the type of lure, brand of lure, color of lure, bait type, water depth, water temperature, wind direction, current direction, geographical area, time of year, moon phase, sunny/cloudy skies, calm/choppy/rough seas, boat length, local knowledge, time of day, and even engine type (yes, some people believe that certain diesel engines create a unique hum or vibration in the water that attracts blue marlin better).
 
