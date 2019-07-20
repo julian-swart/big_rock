@@ -1,4 +1,4 @@
-## Exploratory Data Analysis: The Big Rock Blue Marlin Fishing Tournament - 2019
+## Exploratory Data Analysis: The 61st Big Rock Blue Marlin Fishing Tournament - 2019
 
 ### Tournament context:
 
