@@ -1,4 +1,4 @@
-## Exploratory Data Analysis: The Big Rock Blue Marlin Fishing Tournament 
+## EDA: The 61st Big Rock Blue Marlin Fishing Tournament - 2019
 
 ### Tournament context:
 
@@ -78,7 +78,7 @@
 
   - Distribution of time of day when billfish are caught.
 
-  - Distribtion and summary statistics for time fighting a fish.
+  - Distribution and summary statistics for time fighting a fish.
   
   - How many boats did not catch anything? What is different about them? 
 
