@@ -2,8 +2,6 @@
 
 # tidy participants data frame ----
 
-head(participants_raw)
-
 participants <- 
   participants_raw %>% 
   separate(type, into = c("boat_length", "boat_brand"), sep = "' ", remove = F
@@ -11,10 +9,6 @@ participants <-
   separate(port, into = c("city", "state"), sep = ",", remove = F
            ) %>% 
   mutate(boat_length = as.integer(boat_length))
-
-head(participants)
-
-str(participants)
 
 # check state names 
 
@@ -48,17 +42,96 @@ participants <-
          str_detect(string = boat_brand, pattern = "Ocean") == TRUE ~ "Ocean Yacht",
          str_detect(string = boat_brand, pattern = "Winter") == TRUE ~ "Winter", 
          TRUE ~ boat_brand)
-         )
+         ) %>% 
+  mutate(city = case_when(
+         str_detect(string = city, pattern = "New BErn") == TRUE ~ "New Bern", 
+         str_detect(string = city, pattern = "Mt Pleasant") == TRUE ~ "Mount Pleasant",
+         str_detect(string = city, pattern = "Fredrick") == TRUE ~ "Frederick",
+         str_detect(string = city, pattern = "Summeland Key") == TRUE ~ "Summerland Key",
+         TRUE ~ city),
+         city = ifelse(city == "", NA, city),
+         city = str_trim(city)
+         ) %>% 
+  mutate(state = case_when(
+         city == "Sullivan's Island" ~ "SC", 
+         city == "Southlake" ~ "TX", 
+         city == "Sioux Falls" ~ "SD",
+         city == "Savannah" ~ "GA", 
+         city == "Quitman" ~ "TX", 
+         city == "Port Huron" ~ "MI", 
+         city == "New Gretna" ~ "NJ",
+         city == "Mount Pleasant" ~ "SC", 
+         city == "Little River" ~ "SC", 
+         city == "Greenwood" ~ "SC", 
+         city == "Comstock" ~ "TX", 
+         city == "Cape May" ~ "NJ", 
+         city == "Camden" ~ "SC", 
+         city == "Athens" ~ "GA", 
+         TRUE ~ state)
+         ) %>% 
+  unite(col = "port", c("city", "state"), sep = " ", remove = FALSE
+       ) %>% 
+  select(boat_name, type, boat_length, boat_brand, city, state, port, owner)
 
 # check state names again 
 
 participants %>%
   count(state, sort = T) # There are 57 NA's because 57 boats did not input the state they are from 
 
-# tidy activity data frame ----
+# aggregated boat brands data frame ----
 
-head(activity_raw)
-str(activity_raw)
+boat_brand_agg <- 
+  participants %>% 
+  group_by(boat_brand
+           ) %>% 
+  summarise(num_boats = n()
+            ) %>% 
+  mutate(perc = round(num_boats / sum(num_boats) * 100, 1)
+         ) %>% 
+  arrange(desc(perc))
+
+# tidy up the city data and get lat/longs ----
+
+cities <-
+  participants %>% 
+  filter(!is.na(state), !is.na(city)
+         ) %>% 
+  select(port) %>% 
+  unique() %>%
+  left_join(cities_raw
+            ) %>%
+  mutate(lat = case_when(
+         port == "Fuquay Varina NC" ~ 35.5843, 
+         port == "Ft Pierce FL" ~ 27.4467,
+         port == "New Gretna NJ" ~ 39.5923,
+         port == "Hubert NC" ~ 34.7138,
+         port == "Marco Island FL" ~ 25.9397,
+         port == "Sullivan's Island SC" ~ 32.7632,
+         TRUE ~ lat), 
+         lng = case_when(
+         port == "Fuquay Varina NC" ~ -78.8000, 
+         port == "Ft Pierce FL" ~ -80.3256, 
+         port == "New Gretna NJ" ~ -74.4512,
+         port == "Hubert NC" ~ -77.2452,
+         port == "Marco Island FL" ~ -81.7075,
+         port == "Sullivan's Island SC" ~ -79.8368,
+         TRUE ~ lng)
+         )
+
+# final participants data frame ----
+
+participants <- 
+  participants %>% 
+  left_join(cities)
+
+# number of times each city appears in the data, data frame ----
+
+cities_count <- 
+  participants %>% 
+  count(port, lat, lng) %>% 
+  filter(!is.na(lat), !is.na(lng))
+
+# tidy activity data frame ----
 
 # find activity to filter out 
 
@@ -139,8 +212,7 @@ time$hours_minutes <-
                     "18:30", "23:0")
          )
 
-
-# combine participants and activity to make final data frame ----
+# combine participants, activity, and time to make final data frame ----
 
 df <- 
   activity %>% 
@@ -148,103 +220,15 @@ df <-
              ) %>% 
   bind_cols(time
             ) %>% 
-  select(boat_name, boat_length, boat_brand, owner, city, state, activity, status, weekday, date_time,
+  
+  select(boat_name, boat_length, boat_brand, owner, city, state, activity, weekday, date_time,
          floor_time, hours_minutes, hours, blue_marlin, white_marlin, sailfish, spearfish, hooked_up, 
          released, boated, weighed
          )
-  
 
-# Some boats don't have an equal amount of hook up times to released/lost times like they should (bad data), 
-# so we need to filter those out in order to get the average time of fighting a fish
+# remove dataframe that are no longer needed ----
 
-odd_boats <- 
-  df %>% 
-  filter(weighed == 0) %>% 
-  group_by(boat_name) %>% 
-  summarise(n = n()) %>% 
-  filter(n %% 2 != 0) %>% 
-  pull(boat_name) %>% 
-  unique()
-
-df %>% 
-  filter(boat_name %in% odd_boats) %>% 
-  mutate(status = ifelse(str_detect(string = activity, pattern = "Hooked"), 'start', 'end')) %>% 
-  group_by(boat_name, weekday, status) %>% 
-  summarise(n = n()) %>% 
-  spread(status, n) %>% 
-  mutate(equal = end == start) %>% 
-  pull(equal) %>% 
-  table(useNA = 'ifany')
-
-# only 45 rows have unequal starts and ends, I'm just going to filter those out even though
-# they might contain just a few extra good start and end times
-
-exclusions <- 
-  df %>% 
-  filter(boat_name %in% odd_boats) %>% 
-  mutate(status = ifelse(str_detect(string = activity, pattern = "Hooked"), 'start', 'end')) %>% 
-  group_by(boat_name, weekday, status) %>% 
-  summarise(n = n()) %>% 
-  spread(status, n) %>% 
-  mutate(equal = end == start) %>% 
-  filter(is.na(equal) | equal == FALSE) %>% 
-  select(boat_name, weekday) %>% 
-  unique() %>% 
-  unite(col = 'combined', c('boat_name', 'weekday'), sep = ' ') %>% 
-  pull(combined)
-
-avg_fight_df <- 
-  df %>% 
-  mutate(status = ifelse(str_detect(string = activity, pattern = "Hooked"), 'start', 'end')) %>% 
-  unite(col = 'combined', c('boat_name', 'weekday'), sep = ' ', remove = F) %>% 
-  filter(!combined %in% exclusions) %>% 
-  select(boat_name, weekday, date_time, status)
-
-avg_fight_df <- 
-  avg_fight_df %>% 
-  arrange(boat_name, date_time) %>% 
-  mutate(hook_id = rep(seq(1, nrow(avg_fight_df) /2), each = 2))
-
-avg_fight_df %>% 
- filter(!row_number() %in% c(89, 90, 105, 106, 163, 164, 223, 224, 241, 242, 317, 318, 331, 332, 335, 336, 365, 366, 49, 50, 273, 274, 329, 330)
-        ) %>% # these rows came from a duplicate rows error
-  spread(status, date_time
-         ) %>% 
-  filter(complete.cases(.)
-         ) %>% 
-  select(boat_name, weekday, hook_id, start, end
-         ) %>% 
-  mutate(is_before = start < end, 
-         is_equal = start == end 
-         ) %>% 
-  filter(is_before == TRUE,
-         is_equal == FALSE
-         ) %>%
-  mutate(diff = difftime(time1 = end, time2 = start)) %>%
-  inner_join(df %>% filter(status == 'end', weighed == 0) %>% select(boat_name, weekday, date_time, activity) %>% unique(),
-             by = c("boat_name", "weekday", "end" = "date_time")
-  ) %>% 
-  # pull(diff) %>% 
-  # median()
-  ggplot(aes(x = diff, fill = activity)) +
-  geom_histogram() + 
-  facet_wrap(~activity, scales = 'free')
-
-  
-  
-  
-  
-
-
-
-
-
-
-
-
-
-
-
+#rm(list = c("activity_raw", "participants_raw", "cities_raw", "hours", "minutes", "activity", "time"))
 
 
 
