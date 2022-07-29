@@ -3,29 +3,36 @@
 # particpants distribution of boat length ----
 
 participants %>% 
+  filter(annual == "63rd") %>% 
   group_by(boat_length) %>% 
-  summarise(n = n()) %>% 
+  summarise(n = n()) %>%
+  drop_na() %>% 
   ggplot(aes(x = boat_length, y = n)) + 
   geom_col(fill = "deepskyblue2", alpha = .6) + 
   geom_text(aes(label = n), vjust = -.5, fontface = "bold") + 
-  geom_text(aes(min(participants$boat_length), 15, label = paste("Minimum length = ", round(min(participants$boat_length)), "ft." ), hjust = -.1, vjust = -.5)) + 
-  geom_text(aes(max(participants$boat_length), 15, label = paste("Max length = ", round(max(participants$boat_length)), "ft." ), hjust = 1.1, vjust = -.5)) +
-  geom_text(aes(mean(participants$boat_length), 15, label = paste("Average length = ", round(mean(participants$boat_length)), "ft." ), hjust = -.1, vjust = -.5)) + 
-  geom_vline(xintercept = mean(participants$boat_length), color = "red", size = .5, linetype = "dashed") + 
-  geom_vline(xintercept = c(min(participants$boat_length), max(participants$boat_length)), color = "black", size = .5, linetype = "dashed") + 
+  # geom_text(aes(min(participants$boat_length), 22, label = paste("Minimum length = ", round(participants %>% select(boat_length) %>% drop_na() %>% pull(boat_length) %>% min()), "ft." ), hjust = -.1, vjust = -.5)) + 
+  # geom_text(aes(max(participants$boat_length), 22, label = paste("Max length = ", round(participants %>% select(boat_length) %>% drop_na() %>% pull(boat_length) %>% max()), "ft." ), hjust = 1.1, vjust = -.5)) +
+  # geom_text(aes(mean(participants$boat_length), 22, label = paste("Average length = ", round(participants %>% select(boat_length) %>% drop_na() %>% pull(boat_length) %>% mean()), "ft." ), hjust = -.1, vjust = -.5)) + 
+  geom_vline(xintercept = participants %>% select(boat_length) %>% drop_na() %>% pull(boat_length) %>% mean(), color = "red", size = .5, linetype = "dashed") + 
+  geom_vline(xintercept = c(participants %>% select(boat_length) %>% drop_na() %>% pull(boat_length) %>% min(), 
+                            participants %>% select(boat_length) %>% drop_na() %>% pull(boat_length) %>% max()), 
+             color = "black", size = .5, linetype = "dashed") + 
   scale_x_continuous(breaks = seq(0, 100, 2)) + 
-  scale_y_continuous(breaks = seq(0, 15, 1)) + 
+  scale_y_continuous(breaks = seq(0, 25, 1)) + 
   ggtitle("Boat Lengths of All Participants") + 
   xlab("Length of boat") + 
   ylab("Number of boats")  + 
   theme(axis.text = element_text(size = 12), 
         axis.title = element_text(size = 16), 
-        title = element_text(size = 18))
+        title = element_text(size = 18)) #+ 
+  # geom_col(data = df %>% filter(released == 1 | boated == 1) %>% group_by(boat_length) %>% 
+  #                summarise(n = n()), aes(x = boat_length, y = n))
 
 
 # top boat brands ----
 
 boat_brand_agg %>%
+  filter(annual == "63rd") %>% 
   arrange(desc(perc)) %>% 
   filter(row_number() %in% c(1:25)) %>% 
   ggplot(aes(x = reorder(boat_brand, perc), y = perc)) + 
@@ -34,7 +41,7 @@ boat_brand_agg %>%
   coord_flip() + 
   ggtitle("Top 25 Boat Brands") +
   ylab("Percent of Total") + 
-  scale_y_continuous(breaks = seq(0, 18, 1)) + 
+  #scale_y_continuous(breaks = seq(0, 18, 1)) + 
   theme(axis.text = element_text(size = 14, face = "bold"), 
         axis.title.x = element_text(size = 16),
         axis.title.y = element_blank(),
@@ -139,31 +146,43 @@ df %>%
   group_by(boat_length) %>% #, type) %>% 
   summarise(n = n()) %>% 
   arrange(boat_length) %>% 
-  ggplot(aes(x = boat_length, y = n)) + 
-  geom_bar(stat = "identity", alpha = .6, fill = "deepskyblue2") + # exhibits the central limit theorum?
+  inner_join(df %>% 
+               filter(released == 1 | boated == 1
+                      ) %>% 
+               group_by(boat_length
+                        ) %>% 
+               summarise(n = n()
+                         ) %>% 
+               inner_join(
+                 participants %>% group_by(boat_length) %>% summarise(num_boats = n())
+               ) %>% 
+               mutate(n = ifelse(is.na(n), 0, n), 
+                      normalized = n /num_boats
+                      ) %>% 
+               select(boat_length, normalized
+                      )
+             ) %>% 
+  ggplot(aes(x = boat_length, y = n, fill = normalized)) + 
+  geom_bar(stat = "identity", alpha = .8) + 
   geom_text(aes(label = n), fontface = "bold", vjust = -1) + 
   scale_x_continuous(breaks = seq(0, 100, 2)) + 
+  scale_fill_gradient2(mid = "grey70", high = "red") +
+  labs(fill = "Fish per Boat") + 
   ggtitle("Number of Released & Boated Billfish by Boat Size") + 
   xlab("Length of Boat") + 
-  ylab("Number of Billfish Caught/Boated") + 
+  ylab("Number of Billfish Released/Boated") + 
   theme(axis.text = element_text(size = 12), 
         axis.title = element_text(size = 16), 
         title = element_text(size = 18))
 
 # NEEDS WORK: distribution of released/boated billfish by boat length and species ----
 
-df %>% 
+b <- df %>% 
   filter(released == 1 | boated == 1) %>% 
-  mutate(species = case_when(
-    blue_marlin == 1 ~ "blue marlin", 
-    white_marlin == 1 ~ "white marlin", 
-    sailfish == 1 ~ "sailfish", 
-    spearfish == 1 ~ "spearfish"
-  )) %>% 
   group_by(boat_length, species) %>% #, type) %>% 
   summarise(n = n()) %>% 
   ggplot(aes(x = boat_length, y = n, fill = as.factor(species))) + 
-  geom_bar(stat = "identity", alpha = .6) + # exhibits the central limit theorum?
+  geom_bar(stat = "identity", alpha = .6) +
   geom_text(aes(label = n), fontface = "bold") + 
   scale_x_continuous(breaks = seq(0, 100, 2)) + 
   ggtitle("Number of Released & Boated Billfish by Boat Size") + 
@@ -181,13 +200,31 @@ df %>%
   group_by(boat_length) %>% 
   summarise(n = n()) %>% 
   arrange(boat_length) %>% 
-  ggplot(aes(x = boat_length, y = n)) + 
-  geom_bar(stat = "identity", alpha = .6, fill = "deepskyblue2") + # exhibits the central limit theorum?
+  inner_join(df %>% 
+               filter(released == 1 
+               ) %>% 
+               group_by(boat_length
+               ) %>% 
+               summarise(n = n()
+               ) %>% 
+               inner_join(
+                 participants %>% group_by(boat_length) %>% summarise(num_boats = n())
+               ) %>% 
+               mutate(n = ifelse(is.na(n), 0, n), 
+                      normalized = n /num_boats
+               ) %>% 
+               select(boat_length, normalized
+               )
+             ) %>% 
+  ggplot(aes(x = boat_length, y = n, fill = normalized)) + 
+  geom_bar(stat = "identity", alpha = .8) + 
   geom_text(aes(label = n), fontface = "bold", vjust = -1) + 
   scale_x_continuous(breaks = seq(0, 100, 2)) + 
+  scale_fill_gradient2(mid = "grey70", high = "red") +
+  labs(fill = "Fish per Boat") +
   ggtitle("Number of Released Billfish by Boat Size") + 
   xlab("Length of Boat") + 
-  ylab("Number of Billfish Caught/Boated") + 
+  ylab("Number of Billfish Released") + 
   theme(axis.text = element_text(size = 12), 
         axis.title = element_text(size = 16), 
         title = element_text(size = 18), 
@@ -200,14 +237,32 @@ df %>%
   group_by(boat_length) %>% 
   summarise(n = n()) %>% 
   arrange(boat_length) %>% 
-  ggplot(aes(x = boat_length, y = n)) + 
-  geom_bar(stat = "identity", alpha = .6, fill = "salmon1") + # exhibits the central limit theorum?
+  inner_join(df %>% 
+               filter(boated == 1 
+               ) %>% 
+               group_by(boat_length
+               ) %>% 
+               summarise(n = n()
+               ) %>% 
+               inner_join(
+                 participants %>% group_by(boat_length) %>% summarise(num_boats = n())
+               ) %>% 
+               mutate(n = ifelse(is.na(n), 0, n), 
+                      normalized = n /num_boats
+               ) %>% 
+               select(boat_length, normalized
+               )
+             ) %>% 
+  ggplot(aes(x = boat_length, y = n, fill = normalized)) + 
+  geom_bar(stat = "identity", alpha = .8) +
   geom_text(aes(label = n), fontface = "bold", vjust = -1) + 
   scale_x_continuous(breaks = seq(0, 100, 2), limits = c(22, 100)) + 
   scale_y_continuous(limits = c(0, 22)) +
+  scale_fill_gradient2(mid = "grey70", high = "red") +
+  labs(fill = "Fish per Boat") +
   ggtitle("Number of Boated Billfish by Boat Size") + 
   xlab("Length of Boat") + 
-  ylab("Number of Billfish Caught/Boated") + 
+  ylab("Number of Billfish Boated") + 
   theme(axis.text = element_text(size = 12), 
         axis.title = element_text(size = 16), 
         title = element_text(size = 18), 
@@ -229,7 +284,7 @@ df %>%
          sqrt_fish_caught = sqrt(n)) %>% 
   ggplot(aes(x = sqrt_num_boats, y = sqrt_fish_caught, color = normalized)) + 
   geom_point() + 
-  ggrepel::geom_text_repel(aes(label = boat_length)) +
+  ggrepel::geom_text_repel(aes(label = boat_length), size = 6) +
   geom_abline(intercept = c(0, 0), slope = 1) + 
   expand_limits(x = 0, y = 0) +
   scale_color_gradient2(mid = "grey70", high = "red") +
@@ -240,7 +295,8 @@ df %>%
   theme(axis.text = element_text(size = 12), 
         axis.title = element_text(size = 16), 
         title = element_text(size = 18), 
-        strip.text = element_text(size = 16))
+        strip.text = element_text(size = 16), 
+        legend.text = element_text(size = 14))
 
 # also by species: trying to show how boat length performed by doing 'fish caught per boat entered in the tournament' ----
 
@@ -289,7 +345,7 @@ df %>%
          sqrt_fish_caught = sqrt(n)) %>% 
   ggplot(aes(x = sqrt_num_boats, y = sqrt_fish_caught, color = normalized)) + 
   geom_point() + 
-  ggrepel::geom_text_repel(aes(label = boat_brand)) +
+  ggrepel::geom_text_repel(aes(label = boat_brand), size = 5) +
   geom_abline(intercept = c(0, 0), slope = 1) + 
   expand_limits(x = -0, y = -0) +
   scale_color_gradient2(mid = "grey70", high = "red") +
@@ -321,3 +377,39 @@ df %>%
   filter(boat_name == "Top Dog", weighed != 1) %>% 
   select(activity, weekday, date_time) %>% 
   mutate(status = ifelse(activity == "Hooked up", "start", "end")) 
+
+
+
+
+
+
+# trying to redo relationship graphs ----
+
+df %>% 
+  filter(fish == 1) %>% 
+  group_by(boat_name, boat_length) %>% 
+  summarise(n = n()) %>% 
+  bind_rows(participants %>% 
+              select(boat_name, boat_length) %>% 
+              filter(!boat_name %in% boats_that_caught_fish) %>% mutate(n = 0, species = "NA")
+            ) %>% 
+  #filter(species != "NA", species != "spearfish") %>% 
+  ggplot(aes(x = as.character(boat_length), y = n)) + 
+  # stat_summary(
+  #   fun.ymin = min,
+  #   fun.ymax = max,
+  #   fun.y = median
+  # )
+  geom_violin(scale = "area")
+  #geom_boxplot(varwidth = T)
+  #geom_point(position = position_jitter()) + 
+  #geom_smooth(se = F, method = "lm") + 
+  #facet_wrap(~species, nrow = 3, ncol = 1)
+  #geom_count()
+
+
+
+
+
+
+

@@ -8,11 +8,11 @@ library(maps)
 library(ggrepel)
 
 activity_raw <- 
-  read_csv("/Users/Julian/Documents/projects/big_rock_2019/data/activity.csv") %>% 
+  read_csv("/Users/Julian/Documents/projects/big_rock_2019/data/activity/activity61st.csv") %>% 
   select(-X1) # remove X1 column of row numbers
 
 participants_raw <- 
-  read_csv("/Users/Julian/Documents/projects/big_rock_2019/data/participants.csv") %>% 
+  read_csv("/Users/Julian/Documents/projects/big_rock_2019/data/participants/participants61st.csv") %>% 
   select(-X1) # remove X1 column of row numbers
 
 cities_raw <-

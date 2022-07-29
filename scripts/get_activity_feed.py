@@ -12,13 +12,19 @@ from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 
-page = requests.get("https://widgets.reeltimeapps.com/live/tournaments/61st-annual-big-rock-blue-marlin-tournament/widgets/feed.json?day=0&per=10000&type=scores")
+number = "64th"
+
+page = requests.get("https://widgets.reeltimeapps.com/live/tournaments/" + number + "-annual-big-rock-blue-marlin-tournament/widgets/feed.json?day=0&per=10000&type=scores")
 
 page.status_code # a status code of 200 means the page downloaded successfully 
 
 soup = BeautifulSoup(page.content, 'html.parser')
 
 newsfeed = soup.find_all('h4')
+
+# include this line below for the 63rd annual:
+
+newsfeed = newsfeed[0:100] # needed this to take out the long updates of only text with no boat names or times
 
 boat_names = []
 
@@ -41,7 +47,7 @@ d = {'boat_name':boat_names, 'activity':activity, 'time':time}
 
 df = pd.DataFrame(d)
 
-df.to_csv("/Users/Julian/Documents/python/activity.csv")
+df.to_csv("/Users/Julian/Documents/projects/big_rock_2019/data/activity/activity" + number + ".csv")
 
 
 

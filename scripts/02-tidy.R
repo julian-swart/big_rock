@@ -29,18 +29,38 @@ participants <-
   participants %>%
   mutate(state = case_when(
          str_detect(string = state, pattern = "NC|North") == TRUE ~ "NC", 
-         str_detect(string = state, pattern = "FL|Fl") == TRUE ~ "FL", 
+         str_detect(string = state, pattern = "FL|Fl|Florida|FLA") == TRUE ~ "FL", 
          str_detect(string = state, pattern = "MD|Maryland") == TRUE ~ "MD",
-         str_detect(string = state, pattern = "VA") == TRUE ~ "VA")
+         str_detect(string = state, pattern = "VA") == TRUE ~ "VA", 
+         str_detect(string = state, pattern = "DE") == TRUE ~ "DE")
          ) %>% 
   mutate(boat_brand = case_when(
          str_detect(string = boat_brand, pattern = "BCBuddy Cannady|BC|Canady") == TRUE ~ "Buddy Cannady", 
          str_detect(string = boat_brand, pattern = "Grady White") == TRUE ~ "Grady White",
+         str_detect(string = boat_brand, pattern = "C & L") == TRUE ~ "C&L",
+         str_detect(string = boat_brand, pattern = "Cap N Squid") == TRUE ~ "Captain Squid",
+         str_detect(string = boat_brand, pattern = "CONTENDER") == TRUE ~ "Contender",
          str_detect(string = boat_brand, pattern = "Cabo") == TRUE ~ "Cabo",
          str_detect(string = boat_brand, pattern = "BuddyDavis") == TRUE ~ "Buddy Davis",
          str_detect(string = boat_brand, pattern = "Custom Carolina") == TRUE ~ "Custom Carolina",
          str_detect(string = boat_brand, pattern = "Ocean") == TRUE ~ "Ocean Yacht",
          str_detect(string = boat_brand, pattern = "Winter") == TRUE ~ "Winter", 
+         str_detect(string = boat_brand, pattern = "Scarbourough|Scarbourgh|Ricky Scarbourh|Ricky Scarborough") == TRUE ~ "Scarborough",
+         str_detect(string = boat_brand, pattern = "Spencer") == TRUE ~ "Spencer",
+         str_detect(string = boat_brand, pattern = "Viking|VIKING") == TRUE ~ "Viking",
+         str_detect(string = boat_brand, pattern = "YellowFin|YELLOWFIN") == TRUE ~ "Yellowfin",
+         str_detect(string = boat_brand, pattern = "F and S") == TRUE ~ "F&S",
+         str_detect(string = boat_brand, pattern = "Forbes") == TRUE ~ "Forbes",
+         str_detect(string = boat_brand, pattern = "Guthrie") == TRUE ~ "Guthrie",
+         str_detect(string = boat_brand, pattern = "Hydra SPorts") == TRUE ~ "Hydrosport",
+         str_detect(string = boat_brand, pattern = "Island") == TRUE ~ "Island",
+         str_detect(string = boat_brand, pattern = "Merrit") == TRUE ~ "Merritt",
+         str_detect(string = boat_brand, pattern = "Ocean") == TRUE ~ "Ocean Yacht",
+         str_detect(string = boat_brand, pattern = "SCULLY|Sculley") == TRUE ~ "Scully",
+         str_detect(string = boat_brand, pattern = "sea fox") == TRUE ~ "Sea Fox",
+         str_detect(string = boat_brand, pattern = "Sea Hunt") == TRUE ~ "Sea Hunt",
+         str_detect(string = boat_brand, pattern = "SPORTSMAN") == TRUE ~ "Sportsman",
+         str_detect(string = boat_brand, pattern = "Willis") == TRUE ~ "Willis",
          TRUE ~ boat_brand)
          ) %>% 
   mutate(city = case_when(
@@ -71,24 +91,37 @@ participants <-
          ) %>% 
   unite(col = "port", c("city", "state"), sep = " ", remove = FALSE
        ) %>% 
-  select(boat_name, type, boat_length, boat_brand, city, state, port, owner)
+  select(boat_name, type, boat_length, boat_brand, city, state, port, owner, annual)
 
 # check state names again 
 
 participants %>%
   count(state, sort = T) # There are 57 NA's because 57 boats did not input the state they are from 
 
+# check cities
+
+participants %>%
+  count(city, sort = T) %>% 
+  View()
+
+# check boat brands
+
+participants %>%
+  count(boat_brand, sort = T)
+
 # aggregated boat brands data frame ----
 
 boat_brand_agg <- 
   participants %>% 
-  group_by(boat_brand
+  group_by(boat_brand, annual
            ) %>% 
   summarise(num_boats = n()
             ) %>% 
+  group_by(annual) %>% 
   mutate(perc = round(num_boats / sum(num_boats) * 100, 1)
          ) %>% 
-  arrange(desc(perc))
+  arrange(desc(perc)) %>% 
+  drop_na()
 
 # tidy up the city data and get lat/longs ----
 
@@ -171,7 +204,14 @@ activity <-
          hooked_up = ifelse(str_detect(string = activity, pattern = "Hooked"), 1, 0),
          released = ifelse(str_detect(string = activity, pattern = "Released"), 1, 0), 
          boated = ifelse(str_detect(string = activity, pattern = "Boated"), 1, 0),
-         weighed = ifelse(str_detect(string = activity, pattern = "Weighed"), 1, 0)
+         weighed = ifelse(str_detect(string = activity, pattern = "Weighed"), 1, 0), 
+         fish = ifelse(released == 1 | boated == 1 | weighed == 1, 1, 0), 
+         species = case_when(
+           blue_marlin == 1 ~ "blue marlin", 
+           white_marlin == 1 ~ "white marlin", 
+           sailfish == 1 ~ "sailfish", 
+           spearfish == 1 ~ "spearfish", 
+           TRUE ~ "NA")
          )
 
 # look at activity again 
@@ -223,8 +263,15 @@ df <-
   
   select(boat_name, boat_length, boat_brand, owner, city, state, activity, weekday, date_time,
          floor_time, hours_minutes, hours, blue_marlin, white_marlin, sailfish, spearfish, hooked_up, 
-         released, boated, weighed
+         released, boated, weighed, fish, species
          )
+
+
+boats_that_caught_fish <- 
+  df %>% 
+  filter(fish == 1) %>% 
+  pull(boat_name)
+
 
 # remove dataframe that are no longer needed ----
 
