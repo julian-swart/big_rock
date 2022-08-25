@@ -8,7 +8,7 @@ Here is a link to the tournament website: https://www.thebigrock.com/
 
 ### Data exploration interests:
 
-- With the data I was able to collect through web scaping, I want to explore:
+- With the data I was able to collect through web scaping, I wanted to explore:
 
   - The most common boat brands and boat lengths.
   
