@@ -3,27 +3,14 @@
 # -*- coding: utf-8 -*-
 
 """
-
 Created on Wed Aug  3 22:34:28 2022
-
- 
-
 @author: JSWART
-
 """
-
-
 ##### get activity feed data annual 64: new code starting in 2022
 
- 
-
 from bs4 import BeautifulSoup
-
 import urllib.request
-
 import pandas as pd
-
- 
 
 number = '64th'
 
