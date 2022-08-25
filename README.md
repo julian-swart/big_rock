@@ -28,7 +28,7 @@ Here is a link to the tournament website: https://www.thebigrock.com/
   
 - The tournament runs for 6 days. Boats choose 4 of the 6 days to fish.
   
-- The term *boating*, *boated*, *land*, or *landed* means the crew of a boat was able to catch and bring aboard a blue marlin that they intend to weigh on land. The fish will only be boated if the crew believes it meets the 400 lb qualification (they make this decision by measuring its length and girth to calculate its approximate weight).
+- The term *boating*, *boated*, *land*, or *landed* means the crew of a boat was able to catch and bring aboard a blue marlin that they intend to weigh on land. The fish will only be boated if the crew believes it meets the 400 lb qualification (they make this decision by measuring its length and girth to calculate its approximate weight while the fish is next to the boat in the water).
 
 
 
