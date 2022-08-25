@@ -18,7 +18,7 @@ Here is a link to the tournament website: https://www.thebigrock.com/
 
   - The relationship bwetween boat brand and amount of billfish caught.
 
-  - The relationship between the where the boat is from and amount of billfish caught.
+  - The relationship between where the boat is from and amount of billfish caught.
   
   - Explore any temporal trends across the 6 years of data that I have collected. 
 
