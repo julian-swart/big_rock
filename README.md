@@ -2,7 +2,7 @@
 
 ### Overview
 
-This project was born out a passion for fishing, a curiosity to learn web-scraping, and to have some fun visualizing data in R. The Big Rock is one of the largest competitive sportfishing tournaments in the world. It is held annually in the beginning of June and is based out of a small coastal town named Morehead City, North Carolina - about an hour from where I grew up. The ultimate goal of this tournament is to catch the heaviest Atlantic blue marlin, resulting in a large monetary top-prize range of $1-$3.5 million dollars. Typically, about 150-300 boats compete for this prize each year. 
+This project was born out a passion for fishing, a curiosity to learn web-scraping, and to have some fun visualizing data in R. The Big Rock is one of the largest competitive sportfishing tournaments in the world. It is held annually in the beginning of June and is based out of a small coastal town named Morehead City, North Carolina - about an hour from where I grew up. The ultimate goal of this tournament is to catch the heaviest Atlantic blue marlin, resulting in a large monetary top-prize range of $1 to $3.5 million dollars. Typically, about 150-300 boats compete for this prize each year. 
 
 Here is a link to the tournament website: https://www.thebigrock.com/
 
