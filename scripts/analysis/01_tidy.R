@@ -179,7 +179,7 @@ activity <-
   activity_raw %>%
   filter(!str_detect(string = activity, pattern = "dolphin|wahoo|tuna|Daily 1st Release|1st|61st|dq'd|daily|unverified|1st")
          ) %>%
-  mutate(time = replace(time, time == "Monday @ 1:37 AM", "Monday @ 1:37 PM"), # found these two times were mislabelled as AM time
+  mutate(time = replace(time, time == "Monday @ 1:37 AM", "Monday @ 1:37 PM"), # found these two times were mislabeled as AM time
          time = replace(time, time == "Monday @ 1:14 AM", "Monday @ 1:14 PM")
          ) %>% 
   separate(col = time, into = c("weekday", "time"), sep = " @"

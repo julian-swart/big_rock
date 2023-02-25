@@ -10,16 +10,14 @@ library(ggrepel)
 get_activity_data <- 
   function(annual, df_name){
     
-      read_csv(paste("/Users/Julian/Documents/projects/big_rock_2019/data/activity/activity", annual, ".csv", sep = "")) %>% 
-      select(-X1) # remove X1 column of row numbers
+      read_csv(paste("/Users/Julian/Documents/projects/big_rock/data/activity/activity", annual, ".csv", sep = "")) 
     
   }
 
 get_participants_data <- 
   function(annual, df_name){
     
-    read_csv(paste("/Users/Julian/Documents/projects/big_rock_2019/data/participants/participants", annual, ".csv", sep = "")) %>% 
-      select(-X1) # remove X1 column of row numbers
+    read_csv(paste("/Users/Julian/Documents/projects/big_rock/data/participants/participants", annual, ".csv", sep = ""))
     
   }
 
@@ -31,7 +29,9 @@ activity_raw <-
   bind_rows(get_activity_data(annual = "61st") %>% 
               mutate(annual = "61st")) %>% 
   bind_rows(get_activity_data(annual = "62nd") %>% 
-              mutate(annual = "62nd"))
+              mutate(annual = "62nd")) %>% 
+  bind_rows(get_activity_data(annual = "63rd") %>% 
+              mutate(annual = "63rd"))
 
 participants_raw <- 
   get_participants_data(annual = "59th") %>% 
@@ -46,7 +46,7 @@ participants_raw <-
               mutate(annual = "63rd"))
 
 cities_raw <-
-  read_csv("/Users/Julian/Documents/projects/big_rock_2019/data/us_cities.csv") %>% 
+  read_csv("/Users/Julian/Documents/projects/big_rock/data/us_cities.csv") %>% 
   select(city, state_id, lat, lng) %>% 
   unite(col = "port", c("city", "state_id"), sep = " ") # all cities in the US database
 
